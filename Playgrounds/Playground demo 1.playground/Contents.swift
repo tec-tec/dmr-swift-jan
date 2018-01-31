@@ -167,6 +167,65 @@ func ecrit(_ items: String...) {
 
 ecrit("yyyy", "jyfj")
 print("toto", "tata", "titi")
+//: Optionals
+
+// Int? / String? / Float?
+// Optional<Int> / Optional<String>
+
+// [Int] / Array<Int>
+
+// Avant usage, il faut déballer
+
+class Human {
+
+    let name: String
+    var age: Int
+
+    var child: Human?
+
+    init(name: String, age: Int = 0, child: Human? = nil) {
+
+        self.name = name
+        self.age = age
+
+        self.child = nil
+    }
+
+    func childAge() -> Int? {
+
+        if let age = child?.age {
+            return age
+        } else {
+            return nil
+        }
+    }
+}
+
+let me = Human(name: "me")
+let child = Human(name: "toto")
+child.age = 10
+
+me.child = child
+
+if let childName = me.child?.name {
+    print(childName)
+}
+
+let childAge = me.childAge()?.description
+
+
+let intString = "25.7"
+
+if let floatValue = Float(intString) {
+    let intValue = Int(floatValue)
+    let result = Float(4) / Float(2)
+} else {
+    print("J'attend un nombre")
+}
+
+
+
+
 
 
 
