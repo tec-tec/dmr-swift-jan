@@ -12,7 +12,17 @@ struct Route {
 
 }
 
-struct Restaurant {
+struct Restaurant: Equatable {
+
+    static func ==(lhs: Restaurant, rhs: Restaurant) -> Bool {
+
+        if lhs.name == rhs.name && lhs.adress == rhs.adress {
+            return true
+        }
+
+        return false
+    }
+
 
     let name: String
     let adress: String
@@ -38,6 +48,14 @@ class Library {
 
     func add(_ resto: Restaurant) {
         restaurants.append(resto)
+    }
+
+    func remove(_ r: Restaurant) {
+
+        // trouver l'index
+        if let index = restaurants.index(of: r) {
+            restaurants.remove(at: index)
+        }
     }
 
 //    func list() -> [Restaurant] {
