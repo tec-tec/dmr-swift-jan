@@ -121,11 +121,52 @@ func eat(_ food: String, with friend: String) {
 eat("Pizza", with: "Paul")
 
 
+//: COLLECTIONS
+
+var villes = ["Paris","Bordeaux","Lyon","Marseille"]
+
+//Recupération
+villes[3]
+
+//Remplacement
+villes[1] = "Montpellier"
+
+//Range
+villes[0...2]
+villes
+
+villes[0...2] = ["Vitrolles", "Aix"]
+villes
 
 
+villes.contains("Paris")
 
 
+var nbHabitants = ["Paris" : 2_250_000, "Bordeaux" : 239_000, "Lyon" : 491_268, "Marseille" : 850_636]
 
+nbHabitants["Toulouse"]
+
+nbHabitants["Toulouse"] = 340_000
+
+nbHabitants["Toulouse"]
+
+//nbHabitants.removeValue(forKey: "Toulouse")
+
+let habTlse = nbHabitants["Toulouse"]
+
+if habTlse != nil {
+    habTlse! * 2
+}
+
+func ecrit(_ items: String...) {
+
+    for elemnt in items {
+        print(elemnt)
+    }
+}
+
+ecrit("yyyy", "jyfj")
+print("toto", "tata", "titi")
 
 
 
