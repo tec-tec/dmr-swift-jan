@@ -239,4 +239,100 @@ let citiesYouVisited: Set = ["Marseille", "Lyon", "Dijon"]
 let citiesWeCanTalk = citiesVisited.symmetricDifference(citiesYouVisited)
 
 
+//: Enums ++
+
+//Raw values
+
+enum TransportType: String {
+    case car = "voiture"
+    case train
+    case plane
+    case rocket
+
+    static var all: [TransportType] {
+        return [.car, .train, .plane, .rocket]
+    }
+}
+
+var p: TransportType = .plane
+p = .train
+
+
+p.rawValue
+
+for truc in TransportType.all {
+    print(truc.rawValue)
+}
+
+
+struct Parcel {
+    var origin: String
+    var destination: String
+
+    let transportMode: TransportType
+}
+
+let json = "kugkjgk"
+if let result = TransportType(rawValue: json) {
+    p = result
+    let moclis = Parcel(origin: "", destination: "", transportMode: result)
+}
+
+
+//Associated values
+
+enum PlaneStatus {
+    case onTime
+    case delayed (delay: Int, cause: String)
+    case cancelled
+
+    init?(state: String, delay: Int?, message: String?) {
+
+        switch state {
+        case "A lh'eure":
+            self = .onTime
+        case "En retard":
+            if let d = delay, let m = message {
+                self = .delayed(delay: d, cause: m)
+            } else {
+                return nil
+            }
+        case "Annulé":
+            self = .cancelled
+        default:
+            return nil
+        }
+
+    }
+
+    var valeurBrute: String {
+        switch self {
+        case .onTime:
+            return "A lh'eure"
+        case .delayed:
+            return "En retard"
+        case .cancelled:
+            return "Annulé"
+        }
+    }
+}
+
+struct Flight {
+
+    let flightNumber: String
+    let origin: String
+    let destination: String
+
+    var status: PlaneStatus
+}
+
+
+
+var af84 = Flight(flightNumber: "AF84", origin: "CDG", destination: "SFO", status: .onTime)
+
+af84.status = .delayed(delay: 15, cause: "Fog")
+af84.status.valeurBrute
+
+
+
 
