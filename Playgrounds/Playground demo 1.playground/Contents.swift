@@ -223,16 +223,20 @@ if let floatValue = Float(intString) {
     print("J'attend un nombre")
 }
 
+//let citiesVisited = Set<String>()
+var citiesVisited: Set<String> = []
+
+citiesVisited.insert("Paris")
+citiesVisited.insert("Lille")
+citiesVisited.insert("Lyon")
+citiesVisited.insert("Marseille")
+
+citiesVisited.count
+
+let citiesYouVisited: Set = ["Marseille", "Lyon", "Dijon"]
 
 
-
-
-
-
-
-
-
-
+let citiesWeCanTalk = citiesVisited.symmetricDifference(citiesYouVisited)
 
 
 
