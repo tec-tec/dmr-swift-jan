@@ -118,11 +118,22 @@
                                 <rect key="frame" x="170" y="384" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eRO-g5-Uik"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="addressTextField" destination="HHv-gK-lsX" id="Izb-2A-p9q"/>
+                        <outlet property="gradeSlider" destination="LCK-NY-pNG" id="uVr-U8-WcH"/>
+                        <outlet property="isVisitedSwitch" destination="hRh-it-84Z" id="sUM-6j-o7x"/>
+                        <outlet property="mediumPriceTextField" destination="syf-hW-o8U" id="3xg-ai-8KB"/>
+                        <outlet property="nameTextField" destination="OUc-i4-txu" id="zax-CH-O6d"/>
+                        <outlet property="styleSegmentedControl" destination="UZf-Tp-QaG" id="TOs-Ow-XWE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
