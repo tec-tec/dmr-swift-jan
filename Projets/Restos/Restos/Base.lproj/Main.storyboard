@@ -33,23 +33,26 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UZf-Tp-QaG">
-                                <rect key="frame" x="70" y="140" width="289" height="28"/>
+                                <rect key="frame" x="70" y="140" width="289" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                    <segment title=""/>
-                                    <segment title=""/>
-                                    <segment title=""/>
+                                    <segment title="Chinese"/>
+                                    <segment title="Japanese"/>
+                                    <segment title="Burger"/>
+                                    <segment title="Pizza"/>
+                                    <segment title="Other"/>
                                 </segments>
                             </segmentedControl>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LCK-NY-pNG">
-                                <rect key="frame" x="59" y="298" width="302" height="30"/>
+                            <slider hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="LCK-NY-pNG">
+                                <rect key="frame" x="59" y="298" width="259" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRh-it-84Z">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hRh-it-84Z">
                                 <rect key="frame" x="312" y="234" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleVisited:" destination="BYZ-38-t0r" eventType="valueChanged" id="Rur-qP-pt6"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nouveau restaurant " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7c-vy-MeL">
                                 <rect key="frame" x="70" y="20" width="235" height="21"/>
@@ -93,7 +96,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9F7-Zw-5v2">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9F7-Zw-5v2">
                                 <rect key="frame" x="16" y="302" width="37" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -122,17 +125,29 @@
                                     <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eRO-g5-Uik"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFB-xL-sXU">
+                                <rect key="frame" x="324" y="301" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="addressTextField" destination="HHv-gK-lsX" id="Izb-2A-p9q"/>
+                        <outlet property="gradeLabel" destination="dFB-xL-sXU" id="DNJ-df-ntv"/>
                         <outlet property="gradeSlider" destination="LCK-NY-pNG" id="uVr-U8-WcH"/>
+                        <outlet property="gradeTitleLabel" destination="9F7-Zw-5v2" id="HBe-Gj-AcH"/>
                         <outlet property="isVisitedSwitch" destination="hRh-it-84Z" id="sUM-6j-o7x"/>
                         <outlet property="mediumPriceTextField" destination="syf-hW-o8U" id="3xg-ai-8KB"/>
                         <outlet property="nameTextField" destination="OUc-i4-txu" id="zax-CH-O6d"/>
                         <outlet property="styleSegmentedControl" destination="UZf-Tp-QaG" id="TOs-Ow-XWE"/>
+                        <outletCollection property="itemsToHide" destination="LCK-NY-pNG" collectionClass="NSMutableArray" id="GFW-JZ-obw"/>
+                        <outletCollection property="itemsToHide" destination="dFB-xL-sXU" collectionClass="NSMutableArray" id="FmL-FW-I5m"/>
+                        <outletCollection property="itemsToHide" destination="9F7-Zw-5v2" collectionClass="NSMutableArray" id="TyO-gp-HgM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
