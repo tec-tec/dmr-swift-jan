@@ -22,6 +22,8 @@ class ViewController: UIViewController {
 
     @IBOutlet var itemsToHide: [UIView]!
 
+    var library = Library()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSegmentedControl()
@@ -60,18 +62,28 @@ class ViewController: UIViewController {
 
     @IBAction func save(_ sender: UIButton) {
 
-        //Recup des valeurs
-        guard let nom = nameTextField.text else {
+        //Textfields
+        guard let name = nameTextField.text, name.count > 2 else { return }
+        guard let address = addressTextField.text, address.count > 2 else { return }
+        guard let priceString = mediumPriceTextField.text, !priceString.isEmpty, let price = Int(priceString) else { return }
 
-            return
+        // Segmented control
+        let index = styleSegmentedControl.selectedSegmentIndex
+        let style = Restaurant.RestaurantStyle.all[index]
+
+        //Switch
+        let isVisited = isVisitedSwitch.isOn
+
+        //Slider
+        var grade: Float? = nil
+        if isVisited {
+            grade = gradeSlider.value
         }
-        guard let add = addressTextField.text else { return }
 
-        //Verif valeurs
+        //Création resto
+        let createdRestaurant = Restaurant(name: name, adress: address, style: style, mediumPrice: price, notation: grade, isVisited: isVisited)
 
-        //Création objet
-
-
+        library.add(createdRestaurant)
 
 
     }
