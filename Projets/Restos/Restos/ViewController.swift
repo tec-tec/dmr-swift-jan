@@ -60,6 +60,20 @@ class ViewController: UIViewController {
 
     @IBAction func save(_ sender: UIButton) {
 
+        //Recup des valeurs
+        guard let nom = nameTextField.text else {
+
+            return
+        }
+        guard let add = addressTextField.text else { return }
+
+        //Verif valeurs
+
+        //Création objet
+
+
+
+
     }
 }
 
