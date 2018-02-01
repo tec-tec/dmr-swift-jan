@@ -39,6 +39,16 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+
+        let floatValue = sender.value
+        let roundedFloat = roundf(floatValue)
+        let intValue = Int(roundedFloat)
+        gradeLabel.text = "\(intValue)"
+
+        sender.value = roundedFloat
+    }
+
     @IBAction func save(_ sender: UIButton) {
 
     }
