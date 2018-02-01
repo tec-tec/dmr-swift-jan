@@ -24,13 +24,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
+        configureSegmentedControl()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    fileprivate func configureSegmentedControl() {
+
+        styleSegmentedControl.removeAllSegments()
+        for style in Restaurant.RestaurantStyle.all {
+            let count = styleSegmentedControl.numberOfSegments
+            styleSegmentedControl.insertSegment(withTitle: style.rawValue, at:count, animated: false)
+            styleSegmentedControl.selectedSegmentIndex = count
+        }
     }
 
     @IBAction func toggleVisited(_ sender: UISwitch) {

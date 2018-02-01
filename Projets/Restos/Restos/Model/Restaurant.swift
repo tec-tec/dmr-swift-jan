@@ -8,12 +8,17 @@
 
 struct Restaurant: Equatable {
 
-    enum RestaurantStyle {
+    enum RestaurantStyle: String {
         case chinese
         case japanese
         case burger
         case pizza
         case other
+
+        static var all: [RestaurantStyle] {
+            return [.chinese, .japanese, .burger, .pizza, .other]
+        }
+
     }
     
     static func ==(lhs: Restaurant, rhs: Restaurant) -> Bool {
