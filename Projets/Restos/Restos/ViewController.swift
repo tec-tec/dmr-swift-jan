@@ -21,12 +21,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var gradeTitleLabel: UILabel!
 
     @IBOutlet var itemsToHide: [UIView]!
+    @IBOutlet weak var proportinalWidthConstraint: NSLayoutConstraint!
 
-    private var library = Library()
+    private var library = Library.instance
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSegmentedControl()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,6 +88,12 @@ class ViewController: UIViewController {
         library.add(createdRestaurant)
 
         print(library.allRestaurants)
+
+        dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func tapped(_ sender: Any) {

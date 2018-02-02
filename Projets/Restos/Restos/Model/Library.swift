@@ -8,7 +8,14 @@
 
 class Library {
 
-    private var restaurants: [Restaurant] = []
+    static let instance = Library()
+
+    private init() {
+
+        restaurants = []
+    }
+
+    private var restaurants: [Restaurant]
     //    var restaurants = [Restaurant]()
     //    var restaurants: Array<Restaurant> = []
     //    var restaurants = Array<Restaurant>()

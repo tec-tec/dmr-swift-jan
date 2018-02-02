@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33421B822024BB7B00DDF45F /* RestoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33421B812024BB7B00DDF45F /* RestoListTableViewController.swift */; };
 		3357A3EB202305040087A393 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357A3EA202305040087A393 /* Restaurant.swift */; };
 		3357A3ED202305AD0087A393 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357A3EC202305AD0087A393 /* Route.swift */; };
 		3357A3EF2023189B0087A393 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357A3EE2023189B0087A393 /* Library.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33421B812024BB7B00DDF45F /* RestoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoListTableViewController.swift; sourceTree = "<group>"; };
 		3357A3EA202305040087A393 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		3357A3EC202305AD0087A393 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		3357A3EE2023189B0087A393 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				3357A3E9202304EA0087A393 /* Model */,
 				337A712F2021FE8600000406 /* AppDelegate.swift */,
 				337A71312021FE8600000406 /* ViewController.swift */,
+				33421B812024BB7B00DDF45F /* RestoListTableViewController.swift */,
 				337A71332021FE8600000406 /* Main.storyboard */,
 				337A71362021FE8600000406 /* Assets.xcassets */,
 				337A71382021FE8600000406 /* LaunchScreen.storyboard */,
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				337A71322021FE8600000406 /* ViewController.swift in Sources */,
+				33421B822024BB7B00DDF45F /* RestoListTableViewController.swift in Sources */,
 				3357A3ED202305AD0087A393 /* Route.swift in Sources */,
 				3357A3EF2023189B0087A393 /* Library.swift in Sources */,
 				337A71302021FE8600000406 /* AppDelegate.swift in Sources */,
