@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var itemsToHide: [UIView]!
 
-    var library = Library()
+    private var library = Library()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    fileprivate func configureSegmentedControl() {
+    private func configureSegmentedControl() {
 
         styleSegmentedControl.removeAllSegments()
         for style in Restaurant.RestaurantStyle.all {
@@ -85,7 +85,13 @@ class ViewController: UIViewController {
 
         library.add(createdRestaurant)
 
+        print(library.allRestaurants)
+    }
 
+    @IBAction func tapped(_ sender: Any) {
+
+        print("toto")
+        view.endEditing(true)
     }
 }
 
